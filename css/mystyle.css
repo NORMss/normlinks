@@ -40,7 +40,7 @@ body {
 
 nav {
     background-color: #fff;
-    padding: 20px;
+    padding: 30px;
     width: 80px;
     display: flex;
     align-items: center;
@@ -51,7 +51,7 @@ nav {
   }
   
   nav.active {
-    width: 350px;
+    width: 40%;
   }
   
   nav ul {
