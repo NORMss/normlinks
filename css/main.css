@@ -14,8 +14,8 @@ body {
 }   
 
 body {
-  background-color: #140e36;
-  color: #f1f1f1;
+  background-color: var(--var-bgcolor);
+  color: var(--var-bodyfontcolor);
   max-width: 700px;
   margin: 0 auto;
   padding: 16px;
@@ -27,8 +27,8 @@ body {
 }
 
 ::selection {
-    background-color: #e2e9ff;
-    color: #402158;
+    background-color: var(--var-logocolor);
+    color: var(--var-selectioncolor);
 }
 
 a {
@@ -76,6 +76,34 @@ a:hover.strava{
   width: 100%;
 }
 
+label {
+  display: block;
+  cursor: pointer;
+}
+​
+.checkbox { 
+  display: none;
+}
+​
+.fake-checkbox { 
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3c7e5e;
+  /* Выровняем по тексту */
+  vertical-align: middle;
+  margin-top: -2px;
+  margin-right: 4px;
+}
+
+.checkbox:checked + .fake-checkbox::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("image\sun.svg") no-repeat center / contain;
+}
+
 .wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -98,12 +126,12 @@ a:hover.strava{
 }
 
 .author a {
-  color: #c9bfb5;
+  color: var(--var-author_acolor);
   /* margin-left: 0.65vh; */
 }
 
 .logo {
-  background-color: #e2e9ff;
+  background-color: var(--var-logocolor);
   border-radius: 15%;
   margin-right: 8px;
   width: 64px;
@@ -126,7 +154,7 @@ a:hover.strava{
   margin: 4px;
   display: flex;
   align-items: center;
-  color: #e2e9ff;
+  color: var(--var-socualscolor);
 }
 
 .social-logo {
@@ -168,6 +196,38 @@ a:hover.strava{
   .link-row{
     justify-content: space-between;
   }
+}
+
+:root {
+  --var-bgcolor: #140e36;
+  --var-logocolor: #e2e9ff;
+  --var-socualscolor: var(--var-logocolor);
+  --var-selectionbgcolor: var(--var-logocolor);
+  --var-selectioncolor:#402158;
+  --var-bodyfontcolor: #f1f1f1;
+  --var-author_acolor: #c9bfb5;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --var-bgcolor: #f2e4db;
+    --var-logocolor: #524a63;
+    --var-socualscolor: var(--var-logocolor);
+    --var-selectionbgcolor: var(--var-logocolor);
+    --var-selectioncolor:#b1a6a6;
+    --var-bodyfontcolor: #0a0a0a;
+    --var-author_acolor: #6f6061;
+  }
+}
+
+[dark]{
+  --var-bgcolor: #140e36;
+  --var-logocolor: #e2e9ff;
+  --var-socualscolor: var(--var-logocolor);
+  --var-selectionbgcolor: var(--var-logocolor);
+  --var-selectioncolor:#402158;
+  --var-bodyfontcolor: #f1f1f1;
+  --var-author_acolor: #c9bfb5;
 }
 
 .noisy {

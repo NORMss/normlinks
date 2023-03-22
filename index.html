@@ -19,8 +19,20 @@
 </head>
 
 <body>
+    <label>
+        <input class="checkbox" type="checkbox" onchange="changeTheme(this.checked)">
+        <span class="fake-checkbox"></span>
+      </label>
+      <script>
+        function changeTheme(isChecked) {
+          if (isChecked) {
+            document.body.setAttribute('dark', '');
+          } else {
+            document.body.removeAttribute('dark');
+          }
+        }
+      </script>
     <div class="main">
-
         <div class="wrapper">
             <div class="author">
                 <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.46 283.46">
