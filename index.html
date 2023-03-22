@@ -19,19 +19,19 @@
 </head>
 
 <body>
-    <label>
-        <input class="checkbox" type="checkbox" onchange="changeTheme(this.checked)">
-        <span class="fake-checkbox"></span>
-      </label>
-      <script>
-        function changeTheme(isChecked) {
-          if (isChecked) {
-            document.body.setAttribute('dark', '');
-          } else {
-            document.body.removeAttribute('dark');
-          }
-        }
-      </script>
+    <div>
+        <input type="checkbox" class="custom-checkbox" id="happy" onchange="changeTheme(this.checked)">
+        <label for="happy"></label>
+        <script>
+            function changeTheme(isChecked) {
+                if (isChecked) {
+                    document.body.setAttribute('dark', '');
+                } else {
+                    document.body.removeAttribute('dark');
+                }
+            }
+        </script>
+        </div>
     <div class="main">
         <div class="wrapper">
             <div class="author">
