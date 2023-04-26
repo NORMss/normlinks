@@ -89,6 +89,7 @@ label {
 .custom-checkbox+label::before {
   content: '';
   display: inline-block;
+  cursor: pointer;
   width: 32px;
   height: 32px;
   margin-right: 0.5em;
@@ -225,6 +226,16 @@ label {
   --var-selectioncolor:#402158;
   --var-bodyfontcolor: #f1f1f1;
   --var-author_acolor: #c9bfb5;
+}
+
+[light]{
+  --var-bgcolor: #f2e4db;
+  --var-logocolor: #524a63;
+  --var-socualscolor: var(--var-logocolor);
+  --var-selectionbgcolor: var(--var-logocolor);
+  --var-selectioncolor:#b1a6a6;
+  --var-bodyfontcolor: #0a0a0a;
+  --var-author_acolor: #6f6061;
 }
 
 .noisy {
