@@ -22,11 +22,30 @@
     <input type="checkbox" class="custom-checkbox" id="happy" onchange="changeTheme(this.checked)">
     <label for="happy"></label>
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const themeToggle = document.getElementById('happy');
+            if (themeToggle) {
+                // Назначаем обработчик события для кнопки
+                themeToggle.addEventListener('change', function () {
+                    changeTheme(themeToggle.checked);
+                });
+                setInitialTheme(themeToggle);
+            }
+        });
+        
+        function setInitialTheme(themeToggle) {
+            const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            themeToggle.checked = isDarkMode;
+            changeTheme(themeToggle.checked);
+        }
+    
         function changeTheme(isChecked) {
             if (isChecked) {
+                document.body.removeAttribute('light');
                 document.body.setAttribute('dark', '');
             } else {
                 document.body.removeAttribute('dark');
+                document.body.setAttribute('light', '');
             }
         }
     </script>
