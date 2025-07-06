@@ -69,6 +69,10 @@ a:hover.strava{
   color: #fc4c02;
 }
 
+a:hover.steam{
+  color: #1b2838;
+}
+
 .main {
   display: flex;
   flex: 1 0 auto;
